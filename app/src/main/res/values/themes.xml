@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WarisanKita" parent="Theme.Material3.DayNight">
+        <item name="android:colorPrimary">#383928</item>
+    </style>
+
+    <style name="Theme.WarisanKita" parent="Base.Theme.WarisanKita" />
+</resources>

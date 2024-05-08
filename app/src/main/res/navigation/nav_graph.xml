@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/provinsiFragment"
+        android:name="com.warisan.kita.fragment.ProvinsiFragment"
+        android:label="WARISAN KITA"
+        tools:layout="@layout/fragment_provinsi" >
+        <action
+            android:id="@+id/action_provinsiFragment_to_destinasiFragment"
+            app:destination="@id/destinasiFragment"
+            app:popUpTo="@id/provinsiFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_provinsiFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/provinsiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/destinasiFragment"
+        android:name="com.warisan.kita.fragment.DestinasiFragment"
+        tools:layout="@layout/fragment_destinasi">
+        <argument
+            android:name="destinasi"
+            app:argType="com.warisan.kita.model.Provinsi" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.warisan.kita.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_provinsiFragment"
+            app:destination="@id/provinsiFragment"
+
+            app:launchSingleTop="true"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.warisan.kita.fragment.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_provinsiFragment"
+            app:destination="@id/provinsiFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.warisan.kita.fragment.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_ubahKataSandiFragment"
+            app:destination="@id/ubahKataSandiFragment"
+            app:popUpTo="@id/profileFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ubahKataSandiFragment"
+        android:name="com.warisan.kita.fragment.UbahKataSandiFragment"
+        android:label="fragment_ubah_kata_sandi"
+        tools:layout="@layout/fragment_ubah_kata_sandi" />
+
+</navigation>
